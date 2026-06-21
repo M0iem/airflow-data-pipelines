@@ -1,0 +1,10 @@
+# Ignore Airflow logs and generated data
+logs/
+data/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore environment variables if you ever add them
+.env
