@@ -1,74 +1,105 @@
-Hna README kamel **ready copier/coller**:
-
-```markdown
 # 🚀 Airflow Data Pipelines
 
-## 📋 Description
+A professional **Data Engineering project** that demonstrates the creation, orchestration, and execution of automated data pipelines using **Apache Airflow** with a fully containerized environment powered by **Docker** and **Docker Compose**.
 
-This project implements automated data pipelines using **Apache Airflow**, **Docker**, and **Docker Compose**.
-
-The goal is to create, manage, and execute data workflows using Airflow DAGs in a containerized environment.
+The project uses Airflow DAGs to define, schedule, and monitor workflow executions.
 
 ---
 
-# 🛠️ Technologies Used
+## 📌 Project Overview
 
-- Apache Airflow
-- Docker
-- Docker Compose
-- Python
-- Data Engineering
-- Workflow Automation
-- DAG Scheduling
+Modern data platforms require reliable workflow orchestration to automate data processing tasks.
+
+This project provides an Airflow-based environment where pipelines can be created, executed, and monitored through the Airflow Web Interface.
+
+Key objectives:
+
+- Automate data workflows using DAGs
+- Manage pipeline scheduling and execution
+- Monitor tasks and dependencies
+- Run Airflow in a reproducible Docker environment
+
+---
+
+## 🏗️ Architecture
+
+The project architecture is based on:
+             +----------------+
+             |   Data Source  |
+             +----------------+
+                      |
+                      v
+             +----------------+
+             | Airflow DAGs   |
+             +----------------+
+                      |
+                      v
+             +----------------+
+             | Task Execution |
+             +----------------+
+                      |
+                      v
+             +----------------+
+             | Data Pipeline  |
+             +----------------+
+
+
+---
+
+# 🛠️ Technologies
+
+| Technology | Purpose |
+|------------|---------|
+| Apache Airflow | Workflow orchestration |
+| Docker | Containerization |
+| Docker Compose | Multi-container management |
+| Python | Pipeline development |
+| DAGs | Workflow definition |
 
 ---
 
 # 📂 Project Structure
-
-```
-
 airflow-data-pipelines/
+
 │
 ├── dags/
-│   └── Airflow DAG files
+│ └── Airflow DAG definitions
 │
 ├── docker-compose.yml
 │
+├── requirements.txt
+│
 ├── README.md
 │
-└── Other configuration files
-
-````
+└── Configuration files
 
 ---
 
 # ✅ Prerequisites
 
-Before starting, make sure you have installed:
+Before installing the project, make sure you have:
 
+- Git
 - Docker
 - Docker Compose
-- Git
 
-Check installation:
+Verify installation:
 
 ```bash
 docker --version
 docker compose version
 git --version
-````
 
----
 
 # ⚙️ Installation & Setup
 
-## 1. Clone the repository
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/M0iem/airflow-data-pipelines.git
 ```
 
-Go inside the project:
+Move into the project directory:
 
 ```bash
 cd airflow-data-pipelines
@@ -76,27 +107,27 @@ cd airflow-data-pipelines
 
 ---
 
-# ▶️ Start Airflow Environment
+## 2. Start Airflow Services
 
-Run Docker Compose:
+Launch the Airflow environment:
 
 ```bash
 docker compose up -d
 ```
 
-This will start all required Airflow services.
+Docker will create and start the required containers.
 
 ---
 
-# 🗄️ Initialize Airflow Database
+# 🗄️ Database Initialization
 
-Initialize the database:
+Initialize the Airflow database:
 
 ```bash
 docker compose run airflow-webserver airflow db init
 ```
 
-Create an Airflow user:
+Create an administrator user:
 
 ```bash
 docker compose run airflow-webserver airflow users create \
@@ -110,7 +141,7 @@ docker compose run airflow-webserver airflow users create \
 
 ---
 
-# 🌐 Access Airflow Web Interface
+# 🌐 Access Airflow Interface
 
 Open your browser:
 
@@ -118,30 +149,33 @@ Open your browser:
 http://localhost:8080
 ```
 
-Login credentials:
+Credentials:
 
 ```
 Username: airflow
-
 Password: airflow
 ```
 
 ---
 
-# ▶️ Execute DAG Pipelines
+# ▶️ Running Pipelines
 
-From the Airflow Web Interface:
+To execute workflows:
 
-1. Enable the DAGs
-2. Click on **Trigger DAG**
-3. Open **Graph View**
-4. Monitor the pipeline execution
+1. Open Airflow Web UI
+2. Enable the required DAG
+3. Click **Trigger DAG**
+4. Monitor execution using:
+
+   * Graph View
+   * Grid View
+   * Task Logs
 
 ---
 
-# 🛑 Stop Airflow Environment
+# 🛑 Stop Environment
 
-To stop all containers:
+Stop all running containers:
 
 ```bash
 docker compose down
@@ -159,15 +193,28 @@ docker compose up -d
 
 ---
 
-# 📌 Notes
+# 🎯 Features
 
-* All pipelines are managed through Airflow DAGs.
-* Docker ensures a reproducible execution environment.
-* Airflow UI allows monitoring and scheduling workflows.
+✅ Automated workflow orchestration
+✅ DAG-based pipeline management
+✅ Dockerized Airflow environment
+✅ Task monitoring and logging
+✅ Reproducible deployment setup
+
+---
+
+# 📚 Learning Outcomes
+
+Through this project, the following concepts are demonstrated:
+
+* Data pipeline orchestration
+* Workflow automation
+* Airflow DAG development
+* Containerized environments
+* Pipeline monitoring
 
 ---
 
 # 👤 Author
 
-Meriem Yafir
-
+**Meriem YAFIR**
